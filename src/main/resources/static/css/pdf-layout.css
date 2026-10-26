@@ -1,0 +1,53 @@
+/* Export isolation: fixed desktop geometry, independent of theme and viewport. */
+.pdf-staging-root {
+ --text-dark:#143622; --text-muted:#475569; --card-bg:#fff;
+ --surface-subtle:#f1f5f2; --primary:#145c48; --maroon:#145c48;
+ --cream:#fff; --border-gold:#b9cbbd;
+}
+.pdf-staging-root * {animation:none!important;transition:none!important;max-height:none!important;}
+.pdf-staging-root > * {margin:0!important;min-height:0!important;}
+.pdf-staging-root table {table-layout:fixed!important;min-width:0!important;width:100%!important;}
+.pdf-staging-root th,.pdf-staging-root td {overflow-wrap:anywhere!important;word-break:normal!important;white-space:normal!important;min-width:0!important;}
+.pdf-staging-root :is(.amma-page-sheet,.result-card,.partner-card,.sannidhi-card,.dasa-section,.hora-section) {background:#fff!important;color:#143622!important;}
+.pdf-staging-root :is(.amma-math-grid,.split-two-col,.dasa-layout,.couple-grid) {grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+.pdf-staging-root :is(.amma-math-grid,.split-two-col,.dasa-layout,.couple-grid) > * {min-width:0!important;}
+.pdf-staging-root .tab-panel {display:block!important;}
+.pdf-staging-root button,.pdf-staging-root .btn-row-flex,.pdf-staging-root .tab-pdf-bar {display:none!important;}
+@media print {
+ :root,[data-theme="dark"] {--text-dark:#143622;--text-muted:#475569;--card-bg:#fff;--surface-subtle:#f1f5f2;--cream:#fff;--primary:#145c48;--maroon:#145c48;}
+ .app-container,main,.tab-panel.active {width:100%!important;max-width:none!important;}
+ .tab-panel.active * {overflow:visible!important;max-height:none!important;}
+ .amma-page-sheet,.result-card,.hora-section,.dasa-section {break-inside:auto!important;page-break-inside:auto!important;height:auto!important;min-height:0!important;}
+ .amma-page-sheet {break-before:page;}
+ table {width:100%!important;min-width:0!important;table-layout:fixed!important;border-collapse:collapse!important;}
+ th,td {white-space:normal!important;overflow-wrap:anywhere!important;}
+ tr {break-inside:avoid!important;page-break-inside:avoid!important;}
+ thead {display:table-header-group!important;}
+ tfoot {display:table-footer-group!important;}
+ h1,h2,h3,h4 {break-after:avoid!important;}
+ button,.studio-intro,.amma-av-filter-bar {display:none!important;}
+}
+@media print {
+ *,*::before,*::after {animation:none!important;transition:none!important;}
+ .tab-panel.active {opacity:1!important;transform:none!important;}
+ .amma-notebook-wrapper {display:block!important;}
+ .amma-math-grid,.amma-varga-2x2 {display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;}
+ .amma-math-box,.amma-kattam-grid {break-inside:avoid!important;}
+}
+/* Keep export contrast stable even when the interactive app is in dark mode. */
+[data-theme="dark"] .pdf-staging-root :is(td,th,.amma-math-box,.meta-box,.prediction-box,.amma-sheet-title,.amma-pillari-top) {
+ color:#143622!important;background-color:#fff!important;
+}
+@media print {
+ .amma-page-sheet {padding:12px!important;margin:0 0 10px!important;}
+ .amma-page-sheet table th,.amma-page-sheet table td {font-size:9pt!important;line-height:1.45!important;padding:5px!important;}
+ .amma-math-box,.amma-math-box li {font-size:9pt!important;line-height:1.5!important;}
+ .amma-sheet-title {font-size:13pt!important;}
+ .amma-page-sheet .amma-pillari-top {font-size:13pt!important;margin-bottom:6px!important;}
+}
+.pdf-staging-root .amma-math-box h3 {color:#145c48!important;border-color:#b9cbbd!important;}
+.pdf-staging-root .amma-math-box {border-color:#b9cbbd!important;}
+@media print {
+ .amma-math-box h3 {color:#145c48!important;border-color:#b9cbbd!important;}
+ .amma-page-sheet,.amma-math-box {background:#fff!important;color:#143622!important;border-color:#b9cbbd!important;}
+}

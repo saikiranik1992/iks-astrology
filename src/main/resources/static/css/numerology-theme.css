@@ -1,0 +1,77 @@
+/* IK's Numerology visual language. Screen-only: existing PDF/print styles stay intact. */
+:root {
+  --primary:#145c48; --primary-dark:#123f36; --maroon:#145c48; --maroon-light:#26765a;
+  --gold:#94702f; --gold-bright:#ad8843; --gold-soft:#edf3d5;
+  --cream:#f4f7f3; --card-bg:#fff; --surface-subtle:#f0f6ef;
+  --text-dark:#203c36; --text-muted:#557166; --border-gold:#dce5dc; --border-accent:#b9cbbd;
+  --shadow:0 8px 30px #123f3605; --shadow-sm:0 2px 8px #123f3604;
+  --radius-lg:16px; --radius-md:12px; --radius-sm:8px;
+}
+[data-theme="dark"] {
+  --primary:#85c7a7; --primary-dark:#123f36; --maroon:#85c7a7; --maroon-light:#a0d8bc;
+  --cream:#10221c; --card-bg:#192e25; --surface-subtle:#213a2e;
+  --text-dark:#e5f1e8; --text-muted:#b0c6b8; --border-gold:#345243; --border-accent:#527160;
+  --gold-soft:#36452c; --shadow:0 8px 30px #00000012;
+}
+body {margin:0;padding:0 24px 40px;font-family:system-ui,-apple-system,'Segoe UI','Noto Sans Tamil',Latha,sans-serif;background:var(--cream);line-height:1.6;}
+.app-container {max-width:1120px;margin:0 auto;}
+.studio-header {margin:0 calc(50% - 50vw) 0;padding:20px max(24px,calc((100vw - 1120px)/2));background:#123f36;border:0;border-radius:0;box-shadow:none;display:flex;justify-content:space-between;align-items:center;gap:24px;overflow:visible;}
+.studio-header::before,.studio-header::after {display:none;}
+.studio-brand {display:flex;gap:13px;align-items:center;flex-shrink:0;}
+.studio-brand strong {display:block;font-size:23px;letter-spacing:-.5px;color:white;}
+.studio-caption {display:block;font-size:11px;color:#c7decf;margin-top:3px;}
+.studio-mark {width:45px;height:45px;border:1px solid #82aa92;border-radius:12px;display:grid;place-items:center;font:600 23px Georgia,serif;color:#e8e9bf;}
+.header-actions {display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end;}
+.studio-header button {background:#ffffff0d!important;border:1px solid #ffffff33!important;color:#fff!important;border-radius:8px;box-shadow:none;font:600 12px/1.5 system-ui,sans-serif;padding:9px 12px;min-height:38px;}
+.studio-header .global-pdf-btn:first-child {background:#e6f1e9!important;color:#164e3c!important;}
+.studio-header button:hover {filter:brightness(1.12);transform:none;}
+.studio-intro {padding:32px 0 23px;}
+.studio-eyebrow {font-size:11px;letter-spacing:1.8px;font-weight:750;color:var(--text-muted);}
+.studio-intro h1 {font-size:32px;letter-spacing:-1px;line-height:1.25;margin:8px 0;color:var(--text-dark);}
+.studio-intro p {font-size:14px;color:var(--text-muted);margin:0;}
+.tab-nav {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;background:var(--card-bg);padding:9px;border-radius:14px;box-shadow:none;margin-bottom:24px;overflow:visible;}
+.tab-btn {min-width:0;white-space:normal;text-align:left;font-size:12px;line-height:1.6;padding:11px 14px;border-radius:8px;}
+.tab-btn.active {background:#145c48;color:#fff;box-shadow:none;}
+.tab-btn:hover:not(.active) {background:var(--surface-subtle);color:var(--text-dark);}
+.tab-pdf-bar {background:transparent;border:0;border-bottom:1px solid var(--border-gold);border-radius:0;padding:0 0 18px;margin-bottom:22px;gap:14px;}
+.tab-pdf-info {display:flex;flex-direction:column;align-items:flex-start;gap:8px;min-width:0;flex:1 1 400px;}
+.tab-pdf-badge {background:var(--surface-subtle);color:var(--text-dark);border:1px solid var(--border-gold);font-size:11px;padding:4px 10px;}
+.tab-pdf-title {font-size:13px;font-weight:600;line-height:1.8;overflow-wrap:anywhere;}
+.tab-pdf-actions,.btn-row-flex {display:flex;flex-wrap:wrap;gap:8px;}
+.tab-pdf-btn,.tab-calc-pdf-btn,.tab-print-btn,.action-btn {background:#145c48!important;color:white!important;border:0!important;box-shadow:none!important;border-radius:8px!important;padding:11px 14px;font-size:12px;line-height:1.5;white-space:normal;}
+.tab-calc-pdf-btn,.tab-print-btn {background:var(--surface-subtle)!important;color:var(--text-dark)!important;border:1px solid var(--border-gold)!important;}
+.birth-form-card,.result-card,.partner-card,.sannidhi-card,.dasa-section,.dosha-section,.sav-section,.bhava-report-section,.hora-section {background:var(--card-bg);border:1px solid var(--border-gold);border-radius:16px;box-shadow:var(--shadow);padding:24px;margin-bottom:24px;}
+.birth-form-grid {grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;align-items:end;}
+.form-field {min-width:0;}
+.form-field label,.selector-label {color:var(--text-dark);font-size:13px;font-weight:650;line-height:1.7;}
+.selector-label {padding-bottom:14px;border-bottom:1px solid var(--border-gold);margin-bottom:20px!important;}
+input,select,textarea {min-width:0;max-width:100%;background:var(--card-bg)!important;color:var(--text-dark)!important;border:1px solid var(--border-accent)!important;border-radius:8px!important;font:inherit;}
+.form-field input,.form-field select {min-height:46px;padding:11px 12px;width:100%;font-size:14px;box-shadow:none;}
+input:focus,select:focus,textarea:focus {outline:3px solid #cae5d5;outline-offset:1px;}
+button:focus-visible,a:focus-visible {outline:3px solid #88bda1;outline-offset:3px;}
+.place-coord-hint {color:var(--text-muted);font-size:11px;overflow-wrap:anywhere;}
+.amma-page-sheet {border-color:var(--border-gold);border-radius:14px;box-shadow:var(--shadow);}
+.amma-sheet-title {color:var(--text-dark);}
+.meta-box {background:var(--surface-subtle);border-radius:12px;}
+footer {color:var(--text-muted);font-size:12px;}
+@media(max-width:900px) {
+ .studio-header {align-items:flex-start;flex-direction:column;gap:16px;}
+ .header-actions {justify-content:flex-start;}
+ .birth-form-grid {grid-template-columns:repeat(2,minmax(0,1fr));}
+}
+@media(max-width:600px) {
+ body {padding:0 14px 28px;}
+ .studio-header {padding:18px 14px;}
+ .studio-brand strong {font-size:22px;}
+ .studio-intro {padding:26px 0 18px;}
+ .studio-intro h1 {font-size:27px;}
+ .tab-nav {grid-template-columns:repeat(2,minmax(0,1fr));gap:4px;padding:6px;}
+ .tab-btn {font-size:11px;padding:10px 8px;}
+ .birth-form-grid {grid-template-columns:1fr;gap:16px;}
+ .birth-form-card,.result-card,.partner-card,.sannidhi-card {padding:18px;}
+ .tab-pdf-actions {width:100%;}
+ .tab-pdf-actions button {flex:1 1 140px;}
+ .header-actions button {font-size:11px;}
+ .amma-page-sheet {max-width:100%;overflow-x:auto;}
+}
+@media(prefers-reduced-motion:reduce) {*,*::before,*::after {animation:none!important;transition:none!important;}}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ta" xmlns:th="http://www.thymeleaf.org">
+<body>
+  <header th:fragment="appHeader(stepBadge, appTitle, appSubtitle)">
+    <div class="header-top-row">
+      <div class="brand-pill-group">
+        <div class="step-badge" th:text="${stepBadge} ?: 'IK’s Astrology • Spring Boot + Thymeleaf Modern Suite'">
+          IK’s Astrology • Spring Boot + Thymeleaf Modern Suite
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="global-pdf-btn" type="button" onclick="downloadActiveTabPdf()" title="Download PDF Report for the Active Tab">
+          📄 Download Current Tab PDF
+        </button>
+        <button class="theme-toggle-btn" id="themeToggleBtn" type="button" onclick="toggleTempleTheme()">
+          🪔 தீப ஒளி முறை (Dark / Light Theme)
+        </button>
+      </div>
+    </div>
+    <h1>
+      <span th:text="${appTitle} ?: '✨ IK’s Astrology'">✨ IK’s Astrology</span>
+      <span class="brand-sub">தமிழ் ஜோதிட செயலி Grand Suite</span>
+    </h1>
+    <p th:text="${appSubtitle} ?: 'நவகிரக தலங்கள் &amp; காயத்ரி மந்திரம் • 12 பாவக பலன் • அஷ்டகவர்க்கம் (337) • தசா புத்தி • பஞ்சாங்கம் &amp; ஓரைகள் • 10 பொருத்தம்'">
+      நவகிரக தலங்கள் &amp; காயத்ரி மந்திரம் • 12 பாவக பலன் • அஷ்டகவர்க்கம் (337) • தசா புத்தி • பஞ்சாங்கம் &amp; ஓரைகள் • 10 பொருத்தம்
+    </p>
+  </header>
+</body>
+</html>

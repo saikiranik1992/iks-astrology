@@ -1,0 +1,41 @@
+<!-- Exact Predictions: isolated feature module; previous IK's Astrology tabs are unchanged. -->
+<section id="exactPredictionsTab" th:fragment="exactPredictionsSection" class="tab-panel ep-panel" aria-label="ExactPredictions தமிழ் ஜாதக ஆய்வு">
+  <div class="ep-shell">
+    <div class="ep-hero">
+      <div class="ep-hero-top"><div class="ep-eyebrow"><span class="ep-dot"></span> IK’S ASTROLOGY / தமிழ் ஜாதக ஆய்வு</div><span id="epConnection" class="ep-connection">API இணைப்பு சரிபார்க்கப்படுகிறது…</span></div>
+      <div class="ep-hero-grid">
+        <div><div class="ep-pill">EXACT PREDICTIONS V2 · PRO API</div><h2>மரபு ஜோதிடம்.<br><em>துல்லியத் தரவு.</em></h2>
+        <p>ExactPredictions சேவை வழங்கும் உண்மையான தரவுகளைக் கொண்டு 23 பக்கத் தமிழ் ஜாதக அறிக்கை. API வழங்காத விவரங்கள் ஊகித்து நிரப்பப்படாது. உங்கள் API சாவி உலாவிக்குச் செல்லாது.</p>
+        </div>
+        <div class="ep-hero-metric"><span class="ep-metric-number">23</span><span class="ep-metric-label">மாதிரி அறிக்கைப் பக்கங்கள்</span><span class="ep-metric-line"></span><span class="ep-metric-sub">தமிழ் ஜாதக ஆய்வு · Dasa · Vargas · Ashtakavarga</span></div>
+      </div>
+    </div>
+    <div class="ep-layout">
+      <section class="ep-form-card" aria-label="பிறப்பு விவரங்கள்">
+        <div class="ep-card-head"><div><span class="ep-kicker">படி 01 · பிறப்பு விவரம்</span><h3>பிறப்பு விவரங்கள்</h3></div><span class="ep-icon-square">✦</span></div>
+        <form id="epBirthForm">
+          <div class="ep-field"><label for="epName">முழுப்பெயர்</label><input required id="epName" name="name" value="Saikiran" maxlength="100" autocomplete="name"></div>
+          <div class="ep-two"><div class="ep-field"><label for="epDate">பிறந்த தேதி</label><input required id="epDate" type="date" value="1992-07-03"></div><div class="ep-field"><label for="epTime">பிறந்த நேரம் (IST)</label><input required id="epTime" type="time" value="13:49"></div></div>
+          <div class="ep-field"><label for="epPlace">பிறந்த ஊர்</label><input required id="epPlace" value="Kanchipuram" maxlength="120" list="epPlaceSuggestions" autocomplete="off"><datalist id="epPlaceSuggestions"><option value="Kanchipuram"></option><option value="Chennai"></option><option value="Bengaluru"></option><option value="Madurai"></option><option value="Coimbatore"></option><option value="Tiruchirappalli"></option></datalist><small>வேறு ஊர்களுக்கு சரியான அட்சரேகை, தீர்க்கரேகையை உள்ளிடவும்.</small></div>
+          <div class="ep-two"><div class="ep-field"><label for="epLat">அட்சரேகை</label><input required id="epLat" type="number" step="any" min="-90" max="90" value="12.8342"></div><div class="ep-field"><label for="epLon">தீர்க்கரேகை</label><input required id="epLon" type="number" step="any" min="-180" max="180" value="79.7036"></div></div>
+          <div class="ep-field"><label for="epTz">நேர மண்டலம் (UTC மணி)</label><input required id="epTz" type="number" step="0.25" min="-12" max="14" value="5.5"></div>
+          <label class="ep-check"><input id="epDasa" type="checkbox" checked><span><strong>தசை மற்றும் விரிவான தசை API அழைப்புகள்</strong><small>மேலும் இரண்டு API அழைப்புகள் · மகாதசை / புத்தி விவரம்</small></span></label>
+          <label class="ep-check"><input id="epBhava" type="checkbox" checked><span><strong>KP பாவக் கஸ்ப் விவரங்களைப் பெறுக</strong><small>மேலும் ஒரு API அழைப்பு · KP பாவக முறை மரபு நூலிலிருந்து மாறுபடலாம்.</small></span></label>
+          <label class="ep-check"><input id="epAv" type="checkbox" checked><span><strong>அஷ்டவர்க்க API விவரங்களையும் பெறுக</strong><small>மேலும் ஒரு API அழைப்பு · 7 கிரக அஷ்டவர்க்க அட்டவணைகள்</small></span></label>
+          <button id="epGenerate" type="submit" class="ep-primary">23 பக்கத் தமிழ் ஜாதகம் உருவாக்குக <span>↗</span></button>
+          <div class="ep-test-tools"><button id="epPreviewSample" type="button" class="ep-quiet">மாதிரி 23 பக்கங்கள் (API செலவு இல்லை)</button><label class="ep-file-button" for="epImportJson">Postman JSON பதிலைத் திறக்க</label><input id="epImportJson" type="file" accept=".json,application/json" hidden></div>
+          <p class="ep-micro">தசை, பாவம், அஷ்டவர்க்க விவரங்களுக்கு தொடர்புடைய API விருப்பங்களை இயக்கவும்.</p>
+          <p class="ep-micro">முழு ஜாதகம் 1 அழைப்பு + தசை 2 + KP 1 + அஷ்டவர்க்கம் 1. தேவையெனில் அடிப்படை விவரத்திற்கான கூடுதல் அழைப்பு செய்யப்படும். வெற்றிகரமான API அழைப்புகள் கிரெடிட்களைப் பயன்படுத்தலாம்.</p>
+        </form>
+      </section>
+      <section class="ep-workspace" aria-label="Report workspace">
+        <div class="ep-summary-bar"><div><span class="ep-kicker">படி 02 · அறிக்கை</span><h3>தமிழ் ஜாதக அறிக்கை</h3></div><div class="ep-actions"><button id="epDownloadJson" type="button" class="ep-quiet" disabled>↓ மூல JSON</button><button id="epPrint" type="button" class="ep-secondary" disabled>↓ PDF சேமி</button></div></div>
+        <div id="epNotice" class="ep-notice" role="status" aria-live="polite"><div class="ep-spark">✧</div><div><strong>உருவாக்கத் தயார்</strong><p>Enter the birth details, then select “23 பக்கத் தமிழ் ஜாதகம் உருவாக்குக.” Live results will appear here.</p></div></div>
+        <div id="epDiagnostics" class="ep-debug" hidden></div>
+        <div class="ep-status-grid"><div class="ep-stat"><span>மாதிரிப் பக்கங்கள்</span><b>23</b><small>நூல் வடிவமைப்பு</small></div><div class="ep-stat"><span>தரவு ஆதாரம்</span><b id="epSourceIndicator">காத்திருக்கிறது</b><small id="epSourceDetail">API அழைப்பு இல்லை</small></div><div class="ep-stat"><span>அஷ்டவர்க்கம்</span><b id="epAvIndicator">—</b><small>சரிபார்ப்பு தேவை</small></div></div>
+        <div id="epReportTools" class="ep-report-tools" hidden><div class="ep-report-heading"><div><span class="ep-kicker">தமிழ் ஜாதகக் காப்பகம்</span><h3 id="epReportTitle">23 ஜாதகப் பக்கங்கள்</h3></div><span class="ep-verified-mark">API ஆதாரம் காட்டப்படும்</span></div><div id="epSheetNav" class="ep-sheet-nav" aria-label="Report sheet navigation"></div><p class="ep-report-hint">API தரவு இல்லாத கட்டங்கள் தெளிவாகக் குறிக்கப்படும். API தரவாக உள்ளூர் கணக்கீடுகள் காட்டப்படாது.</p></div>
+      </section>
+    </div>
+    <div id="epPrintRoot" class="ep-print-root" aria-label="Printable horoscope pages"></div>
+  </div>
+</section>
